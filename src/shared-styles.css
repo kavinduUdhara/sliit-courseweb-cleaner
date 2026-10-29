@@ -94,6 +94,12 @@ input:checked + .sf-slider:before { transform: translateX(18px); }
 .sf-dark-theme::-webkit-scrollbar-thumb { background: #555; }
 .sf-dark-theme::-webkit-scrollbar-thumb:hover { background: #777; }
 
+/* CourseWeb logo dark theme inversion */
+html[data-darkreader-scheme="dark"] #header-logo .logo img {
+    filter: invert(1) !important;
+    mix-blend-mode: screen !important;
+}
+
 /* High-contrast yellow highlight for notices in dark mode */
 html[data-darkreader-scheme="dark"] :is(
     [data-darkreader-inline-bgcolor][style*="255, 207, 53"],

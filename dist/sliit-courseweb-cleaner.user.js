@@ -85,6 +85,11 @@ function applyDarkReader(isDark) {
                 .sf-dark-theme .sf-footer a {
                     color: #f7b924 !important;
                 }
+                /* CourseWeb logo dark theme inversion */
+                #header-logo .logo img {
+                    filter: invert(1) !important;
+                    mix-blend-mode: screen !important;
+                }
                 /* Dark scheme for native select elements & dropdowns */
                 select, option, .dropdown-menu {
                     color-scheme: dark !important;
@@ -145,7 +150,7 @@ function applyDarkReader(isDark) {
                     text-decoration-color: #141517 !important;
                 }
             `,
-            ignoreImageAnalysis: [],
+            ignoreImageAnalysis: ['#header-logo .logo img'],
             ignoreInlineStyle: [],
             disableStyleSheetsProxy: true,
             disableCustomElementRegistryProxy: true,
@@ -254,6 +259,8 @@ function injectUI() {
         .sf-dark-theme::-webkit-scrollbar-track { background: #2b2b2b; }
         .sf-dark-theme::-webkit-scrollbar-thumb { background: #555; }
         .sf-dark-theme::-webkit-scrollbar-thumb:hover { background: #777; }
+        /* CourseWeb logo dark theme inversion */
+        html[data-darkreader-scheme="dark"] #header-logo .logo img { filter: invert(1) !important; mix-blend-mode: screen !important; }
     `);
 
     const overlay = createUIElement(`<div id="sliit-filter-overlay"></div>`);

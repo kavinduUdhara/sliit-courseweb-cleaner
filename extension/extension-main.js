@@ -90,6 +90,11 @@ function applyDarkReader(isDark) {
                 .sf-dark-theme .sf-footer a {
                     color: #f7b924 !important;
                 }
+                /* CourseWeb logo dark theme inversion */
+                #header-logo .logo img {
+                    filter: invert(1) !important;
+                    mix-blend-mode: screen !important;
+                }
                 /* Dark scheme for native select elements & dropdowns */
                 select, option, .dropdown-menu {
                     color-scheme: dark !important;
@@ -150,7 +155,7 @@ function applyDarkReader(isDark) {
                     text-decoration-color: #141517 !important;
                 }
             `,
-            ignoreImageAnalysis: [],
+            ignoreImageAnalysis: ['#header-logo .logo img'],
             ignoreInlineStyle: [],
             disableStyleSheetsProxy: true,
             disableCustomElementRegistryProxy: true,
